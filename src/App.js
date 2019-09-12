@@ -9,7 +9,24 @@ class App extends React.Component {
       <div className="App">
          <Clock />
          <Toggle />
-         <List numbers={[11,12,15,"adasd",13]} />
+         <List persons={[
+           {
+             id:1,
+             name:"mak"
+           },
+           {
+             id:2,
+             name:"jawad"
+           },
+           {
+             id:3,
+             name:"jon"
+           },
+           {
+             id:4,
+             name:"steven"
+           },
+         ]} />
       </div>
     );
   }
@@ -40,11 +57,11 @@ class List extends React.Component {
   constructor(props){
     super(props);
     this.state={
-      numbers: props.numbers
+      persons: props.persons
     };
-    this.list =this.state.numbers.map(
-      (number)=>
-      <ListItem key={number.toString()} item={number}/> 
+    this.list =this.state.persons.map(
+      (person)=>
+      <ListItem key={person.id} item={person.name}/> 
     )
   }
 
